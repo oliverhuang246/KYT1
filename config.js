@@ -4,13 +4,17 @@ module.exports = {
     {
       name: 'Flashpoint',
       website: 'https://flashpoint.io/blog',
-      rss: 'https://flashpoint.io/blog/feed/',
+      // RSS feed 可能被保护，主要依赖 Twitter 和网站抓取
+      rss: null,  // 暂时禁用 RSS
       twitter: 'FlashpointIntel',
+      // 添加备用数据源：通过搜索引擎获取最新文章
+      alternativeSource: 'https://flashpoint.io/blog',
       category: '威胁情报',
       selectors: {
-        article: '.blog-post, article',
-        title: 'h2, h3',
-        link: 'a'
+        article: '.blog-post, article, .post-item, [class*="blog"], [class*="post"]',
+        title: 'h1, h2, h3, h4, .title, [class*="title"]',
+        link: 'a',
+        excerpt: 'p, .excerpt, .summary, [class*="excerpt"]'
       }
     },
     {
