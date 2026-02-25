@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>竞品情报 - KYT 监控平台</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 左侧边栏 -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h2>竞品情报</h2>
+      <div class="sidebar-subtitle" id="totalCount">6 家竞争对手追踪</div>
+    </div>
+    
+    <div class="refresh-section">
+      <button id="refreshBtn" onclick="refreshData()">
+        <span>🔄</span>
+        <span>刷新动态</span>
+      </button>
+      <div class="data-info" id="dataInfo">
+        <span>📅 加载中...</span>
+      </div>
+    </div>
+    
+    <div class="competitors-list" id="competitorsList">
+      <!-- 动态生成 -->
+    </div>
+  </aside>
+
+  <!-- 右侧主内容 -->
+  <main class="main-content">
+    <header class="content-header">
+      <h1 class="content-title" id="currentTitle">全部动态</h1>
+      <p class="content-subtitle" id="currentSubtitle">实时追踪竞争对手的最新动态</p>
+      
+      <div class="search-bar">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" placeholder="搜索文章标题或摘要..." onkeyup="handleSearch()">
+      </div>
+    </header>
+    
+    <div class="content-body">
+      <div id="loading">加载中...</div>
+      <div id="updatesList" class="updates-list"></div>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
