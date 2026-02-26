@@ -4,11 +4,8 @@ module.exports = {
     {
       name: 'Flashpoint',
       website: 'https://flashpoint.io/blog',
-      // RSS feed 可能被保护，主要依赖 Twitter 和网站抓取
-      rss: null,  // 暂时禁用 RSS
+      rss: null,  // RSS feed 被保护，暂时禁用
       twitter: 'FlashpointIntel',
-      // 添加备用数据源：通过搜索引擎获取最新文章
-      alternativeSource: 'https://flashpoint.io/blog',
       category: '威胁情报',
       selectors: {
         article: '.blog-post, article, .post-item, [class*="blog"], [class*="post"]',
@@ -26,9 +23,8 @@ module.exports = {
     {
       name: 'StealthMole',
       website: 'https://www.stealthmole.com/blog',
-      // 使用 Atom feed 格式
       rss: 'https://stealthmole-intelligence-hub.blogspot.com/feeds/posts/default',
-      twitter: 'StealthMole',
+      twitter: 'stealthmole_int',  // 正确的 Twitter 账号
       category: '暗网监测',
       selectors: {
         article: '.blog-item, article, .post',
@@ -56,6 +52,18 @@ module.exports = {
       rss: 'https://www.trmlabs.com/post/rss.xml',
       twitter: 'trmlabs',
       category: '区块链分析'
+    },
+    {
+      name: 'SlowMist',
+      website: 'https://slowmist.medium.com',
+      rss: 'https://slowmist.medium.com/feed',
+      twitter: 'SlowMist_Team',
+      category: '区块链安全',
+      selectors: {
+        article: 'article, .post',
+        title: 'h1, h2, h3',
+        link: 'a'
+      }
     }
   ],
   
