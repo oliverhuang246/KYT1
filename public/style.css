@@ -317,13 +317,186 @@ body {
     flex-direction: column;
   }
   
+  /* 优化侧边栏 - 减少高度 */
   .sidebar {
     width: 100%;
     height: auto;
-    max-height: 40vh;
+    max-height: 35vh;  /* 从 40vh 减少到 35vh */
+    border-right: none;
+    border-bottom: 1px solid #e5e7eb;
   }
   
-  .content-body {
+  /* 压缩侧边栏头部 */
+  .sidebar-header {
     padding: 1rem;
   }
+  
+  .sidebar-header h2 {
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+  }
+  
+  .sidebar-subtitle {
+    font-size: 0.75rem;
+  }
+  
+  /* 压缩刷新区域 */
+  .refresh-section {
+    padding: 0.8rem 1rem;
+  }
+  
+  #refreshBtn {
+    padding: 0.6rem;
+    font-size: 0.85rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .data-info {
+    font-size: 0.7rem;
+    padding: 0.4rem;
+  }
+  
+  /* 压缩竞品列表项 */
+  .competitor-item {
+    padding: 0.7rem 1rem;
+  }
+  
+  .competitor-item-name {
+    font-size: 0.85rem;
+  }
+  
+  .competitor-count {
+    font-size: 0.7rem;
+    padding: 0.1rem 0.4rem;
+  }
+  
+  /* 优化主内容区 */
+  .main-content {
+    flex: 1;
+    min-height: 0;  /* 重要：允许内容区域收缩 */
+  }
+  
+  /* 压缩内容头部 */
+  .content-header {
+    padding: 1rem;
+  }
+  
+  .content-title {
+    font-size: 1.3rem;
+    margin-bottom: 0.3rem;
+  }
+  
+  .content-subtitle {
+    font-size: 0.8rem;
+  }
+  
+  .search-bar {
+    margin-top: 0.8rem;
+  }
+  
+  .search-bar input {
+    padding: 0.6rem 0.8rem 0.6rem 2.2rem;
+    font-size: 0.85rem;
+  }
+  
+  .search-icon {
+    left: 0.7rem;
+    font-size: 0.9rem;
+  }
+  
+  /* 优化内容主体 - 增加可滚动区域 */
+  .content-body {
+    padding: 1rem;
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;  /* iOS 平滑滚动 */
+  }
+  
+  /* 优化卡片 */
+  .update-card {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+  }
+  
+  .update-header {
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .update-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+  
+  .update-source {
+    font-size: 0.7rem;
+    padding: 0.15rem 0.5rem;
+  }
+  
+  .update-title {
+    font-size: 0.95rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .update-summary {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 0.8rem;
+  }
+  
+  .update-footer {
+    padding-top: 0.8rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .update-date {
+    font-size: 0.75rem;
+  }
+  
+  .read-more {
+    font-size: 0.85rem;
+  }
+  
+  /* 空状态 */
+  .empty-state {
+    padding: 2rem 1rem;
+  }
+  
+  .empty-state-icon {
+    font-size: 2rem;
+  }
+  
+  /* 加载状态 */
+  #loading {
+    padding: 2rem 1rem;
+    font-size: 0.95rem;
+  }
 }
+
+/* 小屏幕优化（手机竖屏） */
+@media (max-width: 480px) {
+  .sidebar {
+    max-height: 30vh;  /* 进一步减少侧边栏高度 */
+  }
+  
+  .sidebar-header h2 {
+    font-size: 0.95rem;
+  }
+  
+  .content-title {
+    font-size: 1.2rem;
+  }
+  
+  .update-title {
+    font-size: 0.9rem;
+  }
+  
+  .update-summary {
+    font-size: 0.8rem;
+  }
+}
+
